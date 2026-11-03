@@ -212,9 +212,30 @@ p:last-child { margin-bottom: 0; }
 .face { grid-area: 1 / 1; display: block; backface-visibility: hidden; -webkit-backface-visibility: hidden; box-shadow: 0 28px 60px rgba(0,0,0,.5), 0 2px 0 rgba(255,255,255,.04); }
 .face.back { transform: rotateY(180deg); }
 .face img { width: 100%; aspect-ratio: 1729 / 2576; object-fit: cover; }
-.flip-hint { margin: 14px 0 0; font-family: var(--label); font-size: 13px; letter-spacing: .08em; color: #C8D2E0; }
-.flip-hint .to-front, .flip[aria-pressed="true"] + .flip-hint .to-back { display: none; }
-.flip[aria-pressed="true"] + .flip-hint .to-front { display: inline; }
+.cover-tools { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 14px; }
+.flip-hint { margin: 0; font-family: var(--label); font-size: 13px; letter-spacing: .08em; color: #C8D2E0; }
+.flip-hint .to-front, .flip[aria-pressed="true"] + .cover-tools .to-back { display: none; }
+.flip[aria-pressed="true"] + .cover-tools .to-front { display: inline; }
+.zoom-btn { flex: none; min-height: 36px; padding: 0 14px; border: 1px solid rgba(255,255,255,.35); border-radius: 2px; background: none; color: #fff; cursor: pointer; font-family: var(--label); font-weight: 600; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; }
+.zoom-btn::before { content: "⤢ "; }
+.zoom-btn:hover { background: #fff; color: var(--night); }
+.book .byline a { color: inherit; text-decoration-color: rgba(185,197,214,.5); }
+.book .byline a:hover { color: #fff; }
+
+/* Zoom viewer */
+.viewer { width: 100vw; height: 100dvh; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; background: rgba(8,13,24,.96); color: #fff; }
+.viewer::backdrop { background: rgba(8,13,24,.96); }
+.viewer[open] { display: flex; flex-direction: column; }
+.viewer-bar { flex: none; display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px var(--gutter); }
+.viewer-bar .tabs { display: flex; gap: 6px; }
+.viewer button { min-height: 40px; padding: 0 14px; border: 1px solid rgba(255,255,255,.35); border-radius: 2px; background: none; color: #fff; cursor: pointer; font-family: var(--label); font-weight: 600; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; }
+.viewer button[aria-pressed="true"] { background: #fff; color: var(--night); }
+.viewer button:focus-visible { outline: 2px solid var(--moon); outline-offset: 2px; }
+.viewer-stage { flex: 1; min-height: 0; overflow: auto; display: grid; place-items: center; padding: 0 var(--gutter) 16px; touch-action: pan-x pan-y pinch-zoom; }
+.viewer-stage img { max-width: 100%; max-height: calc(100dvh - 120px); width: auto; height: auto; cursor: zoom-in; box-shadow: 0 20px 60px rgba(0,0,0,.6); }
+.viewer-stage.zoomed { place-items: start center; }
+.viewer-stage.zoomed img { max-width: none; max-height: none; width: min(1600px, 220vw); cursor: zoom-out; }
+.viewer-hint { flex: none; text-align: center; font-family: var(--label); font-size: 12px; letter-spacing: .08em; color: #AEB9CA; padding: 0 16px 14px; margin: 0; }
 @media (prefers-reduced-motion: reduce) { .flip-inner { transition: none; } .flip:hover .flip-inner { transform: none; } .flip[aria-pressed="true"]:hover .flip-inner { transform: rotateY(180deg); } }
 .cover-link { display: inline-block; margin-top: 8px; font-family: var(--label); font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: #C8D2E0; }
 .cover-link:hover { color: #fff; }
@@ -358,14 +379,17 @@ p:last-child { margin-bottom: 0; }
             </picture>
           </span>
         </button>
-        <p class="flip-hint" aria-hidden="true"><span class="to-back">↻ Tap the book to see the back</span><span class="to-front">↺ Tap to see the front</span></p>
+        <div class="cover-tools">
+          <p class="flip-hint" aria-hidden="true"><span class="to-back">↻ Tap the book to see the back</span><span class="to-front">↺ Tap to see the front</span></p>
+          <button class="zoom-btn" type="button" id="zoom-open" aria-haspopup="dialog">Zoom in</button>
+        </div>
         <a class="cover-link" href="img/kain-full-cover.jpg">View the full cover ↗</a>
       </div>
 
       <div>
         <p class="eyebrow" data-after="New release · Paperback &amp; ebook">Coming December 12 · Paperback &amp; ebook</p>
         <h2 id="book-title">Kain and the Book of Keepings</h2>
-        <p class="byline">Cover art by Colin Laurel</p>
+        <p class="byline">Cover art by <a href="https://www.instagram.com/folklaurel/" rel="noopener">Colin Laurel</a></p>
 
         <p class="hook">Sylva trusts the old stories as little as she trusts Lethescrest’s crooked high priest. But when her beloved guardian falls dangerously ill, she does the unthinkable and invokes a forgotten prayer.</p>
 
@@ -470,6 +494,20 @@ p:last-child { margin-bottom: 0; }
 
 </main>
 
+<dialog class="viewer" id="viewer" aria-label="Book cover, zoomed">
+  <div class="viewer-bar">
+    <div class="tabs">
+      <button type="button" data-side="front" aria-pressed="true">Front</button>
+      <button type="button" data-side="back" aria-pressed="false">Back</button>
+    </div>
+    <button type="button" id="viewer-close">Close ✕</button>
+  </div>
+  <div class="viewer-stage" id="viewer-stage">
+    <img id="viewer-img" src="img/kain-cover-1600.jpg" width="1600" height="2384" alt="Front cover of Kain and the Book of Keepings">
+  </div>
+  <p class="viewer-hint">Tap the image to zoom in or out. Drag or scroll to move around.</p>
+</dialog>
+
 <footer class="site-footer">
   <div class="wrap">
     <span>© <span id="year">2026</span> Tyler Wickstrom · Published by <span class="press">Wicked Tricks Press</span></span>
@@ -527,6 +565,38 @@ p:last-child { margin-bottom: 0; }
     // On release day, swap pre-order wording for "available now" wording.
     if (now >= Date.parse('2026-12-12T00:00:00-08:00')) {
       document.querySelectorAll('[data-after]').forEach(function (el) { el.textContent = el.dataset.after; });
+    }
+
+    // Zoom viewer for the front and back covers.
+    var viewer = document.getElementById('viewer'), stage = document.getElementById('viewer-stage'), vimg = document.getElementById('viewer-img');
+    var sides = { front: ['img/kain-cover-1600.jpg', 'Front cover of Kain and the Book of Keepings'],
+                  back: ['img/kain-back-1600.jpg', 'Back cover of Kain and the Book of Keepings: the book description and author bio'] };
+    function show(side) {
+      vimg.src = sides[side][0]; vimg.alt = sides[side][1]; stage.classList.remove('zoomed');
+      viewer.querySelectorAll('[data-side]').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.side === side); });
+    }
+    if (viewer && viewer.showModal) {
+      document.getElementById('zoom-open').addEventListener('click', function () {
+        var f = document.querySelector('.flip');
+        show(f && f.getAttribute('aria-pressed') === 'true' ? 'back' : 'front');
+        viewer.showModal();
+      });
+      viewer.querySelectorAll('[data-side]').forEach(function (b) { b.addEventListener('click', function () { show(b.dataset.side); }); });
+      document.getElementById('viewer-close').addEventListener('click', function () { viewer.close(); });
+      vimg.addEventListener('click', function (e) {
+        var zoomed = stage.classList.toggle('zoomed');
+        if (zoomed) { // keep the tapped spot roughly in view
+          var r = vimg.getBoundingClientRect();
+          var fx = (e.clientX - r.left) / r.width, fy = (e.clientY - r.top) / r.height;
+          requestAnimationFrame(function () {
+            stage.scrollLeft = fx * stage.scrollWidth - stage.clientWidth / 2;
+            stage.scrollTop = fy * stage.scrollHeight - stage.clientHeight / 2;
+          });
+        }
+      });
+      stage.addEventListener('click', function (e) { if (e.target === stage) viewer.close(); });
+    } else {
+      document.getElementById('zoom-open').addEventListener('click', function () { window.location.href = 'img/kain-cover-1600.jpg'; });
     }
 
     // Flip the book cover between front and back.
