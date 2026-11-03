@@ -483,9 +483,10 @@ p:last-child { margin-bottom: 0; }
     <div class="wrap">
       <p class="eyebrow">Connect</p>
       <h2 id="connect-title">Stay in touch</h2>
-      <p class="lede">For events, book clubs, interviews, or just to say you finished the book, reach out on LinkedIn, or follow on Amazon for new releases.</p>
+      <p class="lede">For events, book clubs, interviews, or just to say you finished the book, email <a class="js-email" data-u="wickedtrickspress" data-d="gmail.com">wickedtrickspress [at] gmail.com</a>. You can also connect on LinkedIn, or follow on Amazon for new releases.</p>
       <div class="btn-row">
-        <a class="btn btn-solid" href="https://www.linkedin.com/in/tyler-wickstrom" rel="noopener">LinkedIn</a>
+        <a class="btn btn-solid js-email" data-u="wickedtrickspress" data-d="gmail.com" data-label="Email">Email</a>
+        <a class="btn btn-line" href="https://www.linkedin.com/in/tyler-wickstrom" rel="noopener">LinkedIn</a>
         <a class="btn btn-line" href="https://amazon.com/author/tylerwickstrom" rel="noopener">Amazon author page</a>
       </div>
     </div>
@@ -597,6 +598,13 @@ p:last-child { margin-bottom: 0; }
     } else {
       document.getElementById('zoom-open').addEventListener('click', function () { window.location.href = 'img/kain-cover-1600.jpg'; });
     }
+
+    // Email links are assembled here so the address isn't sitting in the page for spam bots.
+    document.querySelectorAll('.js-email').forEach(function (el) {
+      var addr = el.dataset.u + '@' + el.dataset.d;
+      el.href = 'mailto:' + addr;
+      if (!el.dataset.label) el.textContent = addr;
+    });
 
     // Flip the book cover between front and back.
     var flip = document.querySelector('.flip');
