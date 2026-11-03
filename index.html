@@ -34,8 +34,7 @@
       "url": "https://wickedtricks.github.io/",
       "image": "https://wickedtricks.github.io/img/tyler-wickstrom-960.jpg",
       "sameAs": [
-        "https://www.linkedin.com/in/tyler-wickstrom",
-        "https://amazon.com/author/tylerwickstrom"
+        "https://www.linkedin.com/in/tyler-wickstrom"
       ]
     },
     {
@@ -320,6 +319,17 @@ p:last-child { margin-bottom: 0; }
 .connect .lede { max-width: 46ch; margin: 14px auto 30px; color: var(--ink-soft); }
 .connect .btn-row { justify-content: center; }
 
+/* Email notice */
+.toast { position: fixed; left: 50%; bottom: max(20px, env(safe-area-inset-bottom)); transform: translateX(-50%); z-index: 90;
+  display: flex; align-items: center; gap: 16px; flex-wrap: wrap; justify-content: center;
+  width: max-content; max-width: calc(100vw - 32px); padding: 14px 18px;
+  background: var(--ink); color: #fff; border-radius: 3px; box-shadow: 0 12px 32px rgba(0,0,0,.3);
+  font-family: var(--label); font-size: 14px; letter-spacing: .02em; }
+.toast[hidden] { display: none; }
+.toast .gmail { color: var(--moon); font-weight: 600; letter-spacing: .1em; text-transform: uppercase; font-size: 12px; }
+.toast .gmail:hover { color: #fff; }
+.toast .close { border: 0; background: none; color: #AEB9CA; cursor: pointer; font-size: 16px; padding: 4px; }
+
 /* Footer */
 .site-footer { background: var(--night); color: #AEB9CA; font-family: var(--label); font-size: 13px; letter-spacing: .06em; padding-block: 34px; }
 .site-footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; }
@@ -483,11 +493,10 @@ p:last-child { margin-bottom: 0; }
     <div class="wrap">
       <p class="eyebrow">Connect</p>
       <h2 id="connect-title">Stay in touch</h2>
-      <p class="lede">For events, book clubs, interviews, or just to say you finished the book, email <a class="js-email" data-u="wickedtrickspress" data-d="gmail.com">wickedtrickspress [at] gmail.com</a>. You can also connect on LinkedIn, or follow on Amazon for new releases.</p>
+      <p class="lede">For events, book clubs, interviews, or just to say you finished the book, email <a class="js-email" data-u="wickedtrickspress" data-d="gmail.com">wickedtrickspress [at] gmail.com</a>. You can also connect on LinkedIn.</p>
       <div class="btn-row">
         <a class="btn btn-solid js-email" data-u="wickedtrickspress" data-d="gmail.com" data-label="Email">Email</a>
         <a class="btn btn-line" href="https://www.linkedin.com/in/tyler-wickstrom" rel="noopener">LinkedIn</a>
-        <a class="btn btn-line" href="https://amazon.com/author/tylerwickstrom" rel="noopener">Amazon author page</a>
       </div>
     </div>
   </section>
@@ -507,6 +516,12 @@ p:last-child { margin-bottom: 0; }
   </div>
   <p class="viewer-hint">Tap the image to zoom in or out. Drag or scroll to move around.</p>
 </dialog>
+
+<div class="toast" id="email-toast" role="status" hidden>
+  <span class="msg"></span>
+  <a class="gmail" href="#" target="_blank" rel="noopener">Open in Gmail</a>
+  <button class="close" type="button" aria-label="Dismiss">✕</button>
+</div>
 
 <footer class="site-footer">
   <div class="wrap">
@@ -600,11 +615,24 @@ p:last-child { margin-bottom: 0; }
     }
 
     // Email links are assembled here so the address isn't sitting in the page for spam bots.
+    // Clicking also copies the address and offers Gmail, for computers with no mail app set up.
+    var toast = document.getElementById('email-toast'), toastTimer;
     document.querySelectorAll('.js-email').forEach(function (el) {
       var addr = el.dataset.u + '@' + el.dataset.d;
       el.href = 'mailto:' + addr;
       if (!el.dataset.label) el.textContent = addr;
+      el.addEventListener('click', function () {
+        var done = function (copied) {
+          toast.querySelector('.msg').textContent = copied ? 'Email address copied: ' + addr : addr;
+          toast.querySelector('.gmail').href = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(addr);
+          toast.hidden = false;
+          clearTimeout(toastTimer); toastTimer = setTimeout(function () { toast.hidden = true; }, 9000);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(addr).then(function () { done(true); }, function () { done(false); });
+        else done(false);
+      });
     });
+    toast.querySelector('.close').addEventListener('click', function () { toast.hidden = true; });
 
     // Flip the book cover between front and back.
     var flip = document.querySelector('.flip');
