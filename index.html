@@ -258,6 +258,23 @@ p:last-child { margin-bottom: 0; }
 .event .btn-row { flex-direction: column; align-items: stretch; }
 .no-events { font-style: italic; color: var(--ink-soft); }
 .invite { margin-top: 28px; color: var(--ink-soft); }
+.past { margin-top: clamp(40px, 5vw, 56px); }
+.past-title { font-family: var(--label); font-weight: 600; font-size: 13px; letter-spacing: .2em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 6px; }
+.past-list { list-style: none; margin: 0; padding: 0; }
+.past-list li { display: grid; grid-template-columns: 150px minmax(0, 1fr) minmax(0, 1fr) 90px; gap: 6px 24px; align-items: baseline; padding: 14px 0; border-bottom: 1px solid var(--rule); font-size: 18px; }
+.past-list li[hidden] { display: none; }
+.past-list time { font-family: var(--label); font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft); }
+.past-list .pt { font-weight: 600; }
+.past-list .pv { color: var(--ink-soft); }
+.past-list .pr { justify-self: end; font-family: var(--label); font-size: 13px; letter-spacing: .1em; text-transform: uppercase; }
+.past-more { margin-top: 16px; padding: 8px 0; border: 0; background: none; cursor: pointer; font-family: var(--label); font-weight: 600; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); }
+.past-more:hover { color: var(--ink); }
+@media (max-width: 760px) {
+  .past-list li { grid-template-columns: 1fr auto; }
+  .past-list time { grid-column: 1 / -1; }
+  .past-list .pv { grid-column: 1; }
+  .past-list .pr { grid-column: 2; grid-row: 2 / span 2; align-self: center; }
+}
 @media (max-width: 760px) {
   .event { grid-template-columns: 76px minmax(0, 1fr); }
   .date .day { font-size: 40px; }
@@ -378,8 +395,12 @@ p:last-child { margin-bottom: 0; }
         <h2 id="events-title">Come say hello</h2>
       </div>
 
+      <!-- One <article class="event"> per event, any order.
+           data-ends: when it ends (moves to Past events after this time)
+           data-venue: short venue name for the Past events list
+           data-recap / data-recap-label (optional): link shown once it's past, e.g. photos -->
       <div class="events" id="event-list">
-        <article class="event" data-ends="2026-12-12T19:30:00-08:00">
+        <article class="event" data-ends="2026-12-12T19:30:00-08:00" data-venue="theARTScentered, Vancouver, WA">
           <div class="date" aria-hidden="true">
             <div class="mon">DEC</div>
             <div class="day">12</div>
@@ -397,9 +418,15 @@ p:last-child { margin-bottom: 0; }
           </div>
         </article>
       </div>
-      <p class="no-events" id="no-events" hidden>No events are scheduled right now. Check back soon.</p>
+      <p class="no-events" id="no-events" hidden>No public events are on the calendar right now. New dates are posted here first.</p>
 
       <p class="invite">Hosting a book club, reading, or writing group? Tyler would love to visit. <a href="#connect">Get in touch</a>.</p>
+
+      <div class="past" id="past" hidden>
+        <h3 class="past-title">Past events</h3>
+        <ul class="past-list" id="past-list"></ul>
+        <button class="past-more" id="past-more" type="button" aria-expanded="false" hidden>Show all past events</button>
+      </div>
     </div>
   </section>
 
@@ -443,13 +470,50 @@ p:last-child { margin-bottom: 0; }
 </footer>
 
 <script>
-  // Hide events that have ended; show a fallback when none are left.
   (function () {
-    var now = Date.now(), left = 0;
-    document.querySelectorAll('.event[data-ends]').forEach(function (el) {
-      if (Date.parse(el.dataset.ends) < now) el.remove(); else left++;
-    });
-    if (!left) document.getElementById('no-events').hidden = false;
+    // Events: upcoming stay as full cards (soonest first); ended ones move
+    // into a compact Past events list (newest first, 3 shown, rest behind a toggle).
+    var now = Date.now(), list = document.getElementById('event-list');
+    var all = Array.prototype.slice.call(document.querySelectorAll('.event[data-ends]'));
+    var ends = function (el) { return Date.parse(el.dataset.ends); };
+    var upcoming = all.filter(function (el) { return ends(el) >= now; }).sort(function (a, b) { return ends(a) - ends(b); });
+    var past = all.filter(function (el) { return ends(el) < now; }).sort(function (a, b) { return ends(b) - ends(a); });
+    upcoming.forEach(function (el) { list.appendChild(el); });
+
+    if (!upcoming.length) {
+      document.getElementById('no-events').hidden = false;
+      var heroBtn = document.querySelector('.hero a[href="#events"]');
+      if (heroBtn) heroBtn.textContent = 'Events';
+    }
+
+    if (past.length) {
+      var fmt = new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'America/Los_Angeles' });
+      var ul = document.getElementById('past-list'), SHOW = 3;
+      past.forEach(function (el, i) {
+        var li = document.createElement('li');
+        var t = document.createElement('time'); t.dateTime = el.dataset.ends; t.textContent = fmt.format(ends(el));
+        var name = document.createElement('span'); name.className = 'pt'; name.textContent = el.querySelector('h3').textContent;
+        var venue = document.createElement('span'); venue.className = 'pv'; venue.textContent = el.dataset.venue || '';
+        li.append(t, name, venue);
+        if (el.dataset.recap) {
+          var a = document.createElement('a'); a.className = 'pr'; a.href = el.dataset.recap; a.rel = 'noopener';
+          a.textContent = el.dataset.recapLabel || 'Photos'; li.appendChild(a);
+        }
+        if (i >= SHOW) li.hidden = true;
+        ul.appendChild(li); el.remove();
+      });
+      document.getElementById('past').hidden = false;
+      var more = document.getElementById('past-more');
+      if (past.length > SHOW) {
+        more.hidden = false;
+        more.addEventListener('click', function () {
+          var open = more.getAttribute('aria-expanded') !== 'true';
+          ul.querySelectorAll('li').forEach(function (li, i) { if (i >= SHOW) li.hidden = !open; });
+          more.setAttribute('aria-expanded', open);
+          more.textContent = open ? 'Show fewer' : 'Show all past events';
+        });
+      }
+    }
     document.getElementById('year').textContent = new Date().getFullYear();
 
     // Flip the book cover between front and back.
