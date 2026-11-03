@@ -1,649 +1,340 @@
-<!doctype html>
+Here is a complete HTML document that serves as a user-friendly download and setup guide for Micro-Multi on Windows. It presents the software's key features, a clear download button, and plain-language instructions, all styled as a clean, professional landing page.
+```html
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tyler Wickstrom · Author</title>
-<meta name="description" content="Tyler Wickstrom writes at the intersection of religious systems, mythology, and epic adventure. Author of Kain and the Book of Keepings.">
-<link rel="canonical" href="https://wickedtricks.github.io/">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta name="theme-color" content="#13203A">
-
+<title>Micro-Multi – Local Multi-Agent Desktop Workspace for Windows</title>
+<meta name="description" content="Download Micro-Multi, a local multi-agent desktop workspace compatible with deepseek-harness (dsh) plugins. Simple, step-by-step download and setup guide for Windows users.">
+<meta name="keywords" content="Micro-Multi, multi-agent desktop app, local-first AI workspace, deepseek-harness, dsh plugins, agentic AI, AI agents, MCP, skills, Windows download, desktop workspace">
+<meta name="author" content="Micro-Multi">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://github.com/Bragii044/Micro-Multi">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Tyler Wickstrom">
-<meta property="og:title" content="Tyler Wickstrom · Author of Kain and the Book of Keepings">
-<meta property="og:description" content="Myth, religion, and epic adventure. Kain and the Book of Keepings arrives December 12, 2026 in paperback and ebook. Ebook pre-orders are open now.">
-<meta property="og:url" content="https://wickedtricks.github.io/">
-<meta property="og:image" content="https://wickedtricks.github.io/img/social-preview.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<meta property="og:title" content="Micro-Multi – Local Multi-Agent Desktop Workspace for Windows">
+<meta property="og:description" content="A local multi-agent desktop workspace compatible with deepseek-harness (dsh) plugins. Download it on Windows and let several AI helpers work together on your own computer.">
+<meta property="og:url" content="https://github.com/Bragii044/Micro-Multi">
+<meta property="og:site_name" content="Micro-Multi">
 <meta name="twitter:card" content="summary_large_image">
-
-<link rel="preload" href="fonts/cinzel-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="fonts/eb-garamond-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-
+<meta name="twitter:title" content="Micro-Multi – Local Multi-Agent Desktop Workspace for Windows">
+<meta name="twitter:description" content="Download Micro-Multi, a local multi-agent desktop workspace compatible with deepseek-harness (dsh) plugins. Easy Windows download guide.">
+<meta name="theme-color" content="#2563eb">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Person",
-      "@id": "https://wickedtricks.github.io/#tyler",
-      "name": "Tyler Wickstrom",
-      "jobTitle": "Author",
-      "url": "https://wickedtricks.github.io/",
-      "image": "https://wickedtricks.github.io/img/tyler-wickstrom-960.jpg",
-      "sameAs": [
-        "https://www.linkedin.com/in/tyler-wickstrom"
-      ]
-    },
-    {
-      "@type": "Book",
-      "name": "Kain and the Book of Keepings",
-      "author": { "@id": "https://wickedtricks.github.io/#tyler" },
-      "publisher": { "@type": "Organization", "name": "Wicked Tricks Press" },
-      "image": "https://wickedtricks.github.io/img/kain-cover-900.jpg",
-      "bookFormat": ["https://schema.org/Paperback", "https://schema.org/EBook"],
-      "datePublished": "2026-12-12"
-    },
-    {
-      "@type": "Event",
-      "name": "Book Launch Party: Kain and the Book of Keepings",
-      "startDate": "2026-12-12T18:00:00-08:00",
-      "endDate": "2026-12-12T19:30:00-08:00",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "eventStatus": "https://schema.org/EventScheduled",
-      "location": {
-        "@type": "Place",
-        "name": "theARTScentered",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "1007 E. Mill Plain Blvd",
-          "addressLocality": "Vancouver",
-          "addressRegion": "WA",
-          "postalCode": "98663",
-          "addressCountry": "US"
-        }
-      },
-      "isAccessibleForFree": true,
-      "performer": { "@id": "https://wickedtricks.github.io/#tyler" }
-    }
-  ]
+  "@type": "SoftwareApplication",
+  "name": "Micro-Multi",
+  "operatingSystem": "Windows",
+  "applicationCategory": "DeveloperApplication",
+  "description": "Local multi-agent desktop workspace compatible with deepseek-harness (dsh) plugins. 本地多 Agent 桌面工作台，兼容 deepseek-harness（dsh）插件体系。",
+  "url": "https://github.com/Bragii044/Micro-Multi",
+  "downloadUrl": "https://github.com/Bragii044/Micro-Multi",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "keywords": "agentic-ai, multi-agent, deepseek-harness, dsh, local-first, desktop-app, mcp, skills"
 }
 </script>
-
-<style>
-/* Fonts are self-hosted (SIL Open Font License): Cinzel, EB Garamond, Archivo */
-@font-face { font-family: 'Cinzel'; font-weight: 600; font-display: swap; src: url(fonts/cinzel-latin-600-normal.woff2) format('woff2'); }
-@font-face { font-family: 'Cinzel'; font-weight: 700; font-display: swap; src: url(fonts/cinzel-latin-700-normal.woff2) format('woff2'); }
-@font-face { font-family: 'EB Garamond'; font-weight: 400; font-display: swap; src: url(fonts/eb-garamond-latin-400-normal.woff2) format('woff2'); }
-@font-face { font-family: 'EB Garamond'; font-weight: 500; font-display: swap; src: url(fonts/eb-garamond-latin-500-normal.woff2) format('woff2'); }
-@font-face { font-family: 'EB Garamond'; font-weight: 600; font-display: swap; src: url(fonts/eb-garamond-latin-600-normal.woff2) format('woff2'); }
-@font-face { font-family: 'EB Garamond'; font-style: italic; font-weight: 400; font-display: swap; src: url(fonts/eb-garamond-latin-400-italic.woff2) format('woff2'); }
-@font-face { font-family: 'EB Garamond'; font-style: italic; font-weight: 500; font-display: swap; src: url(fonts/eb-garamond-latin-500-italic.woff2) format('woff2'); }
-@font-face { font-family: 'Archivo'; font-weight: 500; font-display: swap; src: url(fonts/archivo-latin-500-normal.woff2) format('woff2'); }
-@font-face { font-family: 'Archivo'; font-weight: 600; font-display: swap; src: url(fonts/archivo-latin-600-normal.woff2) format('woff2'); }
-@font-face { font-family: 'Archivo'; font-weight: 700; font-display: swap; src: url(fonts/archivo-latin-700-normal.woff2) format('woff2'); }
-
-:root {
-  --paper: #FAF7F0;
-  --paper-2: #F1ECE0;
-  --ink: #13203A;
-  --ink-soft: #3E4A61;
-  --night: #0E1729;
-  --night-2: #172544;
-  --mist: #CFE3E3;
-  --red: #9B2730;
-  --red-bright: #D8414B;
-  --moon: #DCD45A;
-  --rule: #D9D1BF;
-  --serif: 'EB Garamond', Garamond, Georgia, serif;
-  --title: 'Cinzel', 'Trajan Pro', Georgia, serif;
-  --label: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
-  --wrap: 1120px;
-  --gutter: clamp(20px, 5vw, 48px);
-}
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 72px; }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-body {
-  margin: 0;
-  background: var(--paper);
-  color: var(--ink);
-  font-family: var(--serif);
-  font-size: clamp(18px, 1.1vw + 13px, 20px);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}
-img { display: block; max-width: 100%; height: auto; }
-a { color: var(--red); text-underline-offset: 3px; text-decoration-thickness: 1px; }
-a:hover { color: var(--ink); }
-:focus-visible { outline: 2px solid var(--red); outline-offset: 3px; }
-.wrap { max-width: var(--wrap); margin: 0 auto; padding-inline: var(--gutter); }
-
-.skip { position: absolute; left: -999px; top: 8px; background: var(--ink); color: #fff; padding: 8px 14px; z-index: 100; font-family: var(--label); font-size: 14px; }
-.skip:focus { left: 8px; }
-
-/* Labels and headings */
-.eyebrow {
-  font-family: var(--label); font-weight: 600; font-size: 13px;
-  letter-spacing: .22em; text-transform: uppercase; color: var(--red);
-  margin: 0 0 14px;
-}
-h1, h2, h3 { font-family: var(--title); font-weight: 600; line-height: 1.08; margin: 0; letter-spacing: .01em; text-wrap: balance; }
-h2 { font-size: clamp(32px, 3.2vw + 14px, 48px); }
-h3 { font-size: clamp(24px, 1.6vw + 14px, 32px); }
-p { margin: 0 0 1em; }
-p:last-child { margin-bottom: 0; }
-
-/* Buttons */
-.btn {
-  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-  min-height: 48px; padding: 0 22px;
-  font-family: var(--label); font-weight: 600; font-size: 14px; letter-spacing: .12em; text-transform: uppercase;
-  text-decoration: none; border: 1.5px solid currentColor; border-radius: 2px;
-  transition: background-color .15s, color .15s, border-color .15s;
-}
-.btn-solid { background: var(--red); border-color: var(--red); color: #fff; }
-.btn-solid:hover { background: var(--ink); border-color: var(--ink); color: #fff; }
-.btn-line { color: var(--ink); background: transparent; }
-.btn-line:hover { background: var(--ink); color: var(--paper); }
-.on-dark .btn-line { color: #fff; }
-.on-dark .btn-line:hover { background: #fff; color: var(--night); }
-.on-dark .btn-solid:hover { background: #fff; border-color: #fff; color: var(--night); }
-.btn-row { display: flex; flex-wrap: wrap; gap: 12px; }
-
-/* Header */
-.site-header {
-  position: sticky; top: 0; z-index: 50;
-  background: rgba(250, 247, 240, .94);
-  -webkit-backdrop-filter: saturate(140%) blur(8px); backdrop-filter: saturate(140%) blur(8px);
-  border-bottom: 1px solid var(--rule);
-}
-.site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 64px; }
-.wordmark { font-family: var(--title); font-weight: 600; font-size: 19px; letter-spacing: .08em; color: var(--ink); text-decoration: none; white-space: nowrap; }
-.wordmark:hover { color: var(--ink); }
-.nav { display: flex; gap: clamp(14px, 2.4vw, 32px); }
-.nav a { font-family: var(--label); font-weight: 600; font-size: 12.5px; letter-spacing: .16em; text-transform: uppercase; color: var(--ink); text-decoration: none; padding: 6px 0; border-bottom: 1.5px solid transparent; }
-.nav a:hover { border-bottom-color: var(--red); color: var(--ink); }
-@media (max-width: 640px) {
-  .site-header .wrap { height: auto; padding-block: 12px 10px; flex-direction: column; gap: 6px; }
-  .nav { gap: 20px; }
-  html { scroll-padding-top: 96px; }
-}
-
-/* Hero */
-.hero { padding-block: clamp(48px, 8vw, 104px) clamp(56px, 8vw, 112px); }
-.hero .wrap { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); gap: clamp(32px, 6vw, 88px); align-items: center; }
-.hero h1 { font-size: clamp(46px, 6vw + 12px, 92px); line-height: .98; letter-spacing: .02em; margin-bottom: 22px; }
-.hero .lede { font-size: clamp(21px, 1vw + 16px, 26px); line-height: 1.45; color: var(--ink-soft); max-width: 30ch; margin-bottom: 28px; }
-.hero blockquote { margin: 0 0 34px; padding-left: 20px; border-left: 2px solid var(--red); font-style: italic; font-size: clamp(19px, .6vw + 16px, 22px); color: var(--ink); max-width: 38ch; }
-.portrait { position: relative; justify-self: end; width: 100%; max-width: 420px; }
-.portrait::before { content: ""; position: absolute; inset: 18px -18px -18px 18px; border: 1.5px solid var(--red); z-index: 0; }
-.portrait img { position: relative; z-index: 1; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
-@media (max-width: 820px) {
-  .hero .wrap { grid-template-columns: 1fr; }
-  .portrait { justify-self: start; max-width: 280px; margin: 8px 18px 0 0; }
-}
-
-/* Featured book */
-.book {
-  position: relative; overflow: hidden; color: #E9EDF3;
-  background: radial-gradient(120% 90% at 18% 20%, #1D3150 0%, var(--night) 62%) , var(--night);
-  padding-block: clamp(64px, 9vw, 120px);
-}
-.book::after { /* faint moon from the cover art */
-  content: ""; position: absolute; width: 520px; height: 520px; border-radius: 50%;
-  right: -180px; top: -200px; background: radial-gradient(circle, rgba(220,212,90,.16), rgba(220,212,90,0) 68%);
-  pointer-events: none;
-}
-.book .eyebrow { color: var(--moon); }
-.book .wrap { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 380px) minmax(0, 1fr); gap: clamp(36px, 6vw, 88px); align-items: start; }
-.cover { position: sticky; top: 96px; }
-/* Flipping book: front and back faces share one box */
-.flip { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: pointer; perspective: 1600px; -webkit-tap-highlight-color: transparent; }
-.flip:focus-visible { outline: 2px solid var(--moon); outline-offset: 6px; }
-.flip-inner { display: grid; transform-style: preserve-3d; transition: transform .7s cubic-bezier(.3,.7,.2,1); }
-.flip[aria-pressed="true"] .flip-inner { transform: rotateY(180deg); }
-.flip:hover .flip-inner { transform: rotateY(-6deg); }
-.flip[aria-pressed="true"]:hover .flip-inner { transform: rotateY(186deg); }
-.face { grid-area: 1 / 1; display: block; backface-visibility: hidden; -webkit-backface-visibility: hidden; box-shadow: 0 28px 60px rgba(0,0,0,.5), 0 2px 0 rgba(255,255,255,.04); }
-.face.back { transform: rotateY(180deg); }
-.face img { width: 100%; aspect-ratio: 1729 / 2576; object-fit: cover; }
-.cover-tools { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 14px; }
-.flip-hint { margin: 0; font-family: var(--label); font-size: 13px; letter-spacing: .08em; color: #C8D2E0; }
-.flip-hint .to-front, .flip[aria-pressed="true"] + .cover-tools .to-back { display: none; }
-.flip[aria-pressed="true"] + .cover-tools .to-front { display: inline; }
-.zoom-btn { flex: none; min-height: 36px; padding: 0 14px; border: 1px solid rgba(255,255,255,.35); border-radius: 2px; background: none; color: #fff; cursor: pointer; font-family: var(--label); font-weight: 600; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; }
-.zoom-btn::before { content: "⤢ "; }
-.zoom-btn:hover { background: #fff; color: var(--night); }
-.book .byline a { color: inherit; text-decoration-color: rgba(185,197,214,.5); }
-.book .byline a:hover { color: #fff; }
-
-/* Zoom viewer */
-.viewer { width: 100vw; height: 100dvh; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; background: rgba(8,13,24,.96); color: #fff; }
-.viewer::backdrop { background: rgba(8,13,24,.96); }
-.viewer[open] { display: flex; flex-direction: column; }
-.viewer-bar { flex: none; display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 12px var(--gutter); }
-.viewer-bar .tabs { display: flex; gap: 6px; }
-.viewer button { min-height: 40px; padding: 0 14px; border: 1px solid rgba(255,255,255,.35); border-radius: 2px; background: none; color: #fff; cursor: pointer; font-family: var(--label); font-weight: 600; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; }
-.viewer button[aria-pressed="true"] { background: #fff; color: var(--night); }
-.viewer button:focus-visible { outline: 2px solid var(--moon); outline-offset: 2px; }
-.viewer-stage { flex: 1; min-height: 0; overflow: auto; display: grid; place-items: center; padding: 0 var(--gutter) 16px; touch-action: pan-x pan-y pinch-zoom; }
-.viewer-stage img { max-width: 100%; max-height: calc(100dvh - 120px); width: auto; height: auto; cursor: zoom-in; box-shadow: 0 20px 60px rgba(0,0,0,.6); }
-.viewer-stage.zoomed { place-items: start center; }
-.viewer-stage.zoomed img { max-width: none; max-height: none; width: min(1600px, 220vw); cursor: zoom-out; }
-.viewer-hint { flex: none; text-align: center; font-family: var(--label); font-size: 12px; letter-spacing: .08em; color: #AEB9CA; padding: 0 16px 14px; margin: 0; }
-@media (prefers-reduced-motion: reduce) { .flip-inner { transition: none; } .flip:hover .flip-inner { transform: none; } .flip[aria-pressed="true"]:hover .flip-inner { transform: rotateY(180deg); } }
-.cover-link { display: inline-block; margin-top: 8px; font-family: var(--label); font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: #C8D2E0; }
-.cover-link:hover { color: #fff; }
-.book h2 { color: #fff; margin-bottom: 8px; }
-.book .byline { font-style: italic; font-size: 20px; color: #B9C5D6; margin-bottom: 28px; }
-.book .hook { font-size: clamp(22px, .8vw + 18px, 27px); line-height: 1.4; color: #fff; margin-bottom: 22px; }
-.book .blurb p { color: #D3DAE5; }
-.book .tagline { font-family: var(--title); font-weight: 600; letter-spacing: .06em; color: var(--red-bright); font-size: clamp(18px, .6vw + 15px, 21px); margin: 26px 0; }
-.book .pitch { font-style: italic; color: #fff; border-top: 1px solid rgba(255,255,255,.16); padding-top: 22px; }
-.more { margin-top: 6px; }
-.more summary { cursor: pointer; list-style: none; font-family: var(--label); font-weight: 600; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--moon); display: inline-flex; gap: 8px; align-items: center; padding: 6px 0; }
-.more summary::-webkit-details-marker { display: none; }
-.more summary::after { content: "+"; font-size: 18px; line-height: 1; }
-.more[open] summary::after { content: "–"; }
-.more[open] summary { margin-bottom: 14px; }
-.buy { margin-top: 36px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,.16); }
-.buy h3 { font-family: var(--label); font-weight: 600; font-size: 13px; letter-spacing: .2em; text-transform: uppercase; color: #B9C5D6; margin-bottom: 16px; }
-.formats { list-style: none; margin: 0 0 22px; padding: 0; display: grid; gap: 8px; color: #D3DAE5; }
-.formats li { display: flex; gap: 14px; align-items: baseline; }
-.formats b { font-family: var(--label); font-weight: 600; font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: #fff; min-width: 108px; }
-.buy .note { margin-top: 18px; font-size: 17px; color: #B9C5D6; }
-@media (max-width: 820px) {
-  .book .wrap { grid-template-columns: 1fr; }
-  .cover { position: static; max-width: 300px; }
-}
-
-/* Sections on paper */
-.section { padding-block: clamp(64px, 9vw, 112px); }
-.section + .section { border-top: 1px solid var(--rule); }
-.section-head { margin-bottom: clamp(28px, 4vw, 44px); }
-
-/* Events */
-.events { display: grid; gap: 20px; }
-.event {
-  display: grid; grid-template-columns: 112px minmax(0, 1fr) auto; gap: clamp(18px, 3vw, 36px); align-items: center;
-  background: #fff; border: 1px solid var(--rule); padding: clamp(20px, 3vw, 32px);
-}
-.date { text-align: center; border-right: 1px solid var(--rule); padding-right: clamp(18px, 3vw, 36px); }
-.date .mon { font-family: var(--label); font-weight: 700; font-size: 13px; letter-spacing: .22em; color: var(--red); }
-.date .day { font-family: var(--title); font-weight: 600; font-size: 52px; line-height: 1; }
-.date .yr { font-family: var(--label); font-size: 12px; letter-spacing: .14em; color: var(--ink-soft); margin-top: 4px; }
-.event h3 { font-size: clamp(22px, 1vw + 16px, 28px); margin-bottom: 8px; }
-.event .meta { font-size: 18px; color: var(--ink-soft); line-height: 1.5; margin: 0; }
-.event .meta strong { color: var(--ink); font-weight: 600; }
-.event .btn-row { flex-direction: column; align-items: stretch; }
-.no-events { font-style: italic; color: var(--ink-soft); }
-.invite { margin-top: 28px; color: var(--ink-soft); }
-.past { margin-top: clamp(40px, 5vw, 56px); }
-.past-title { font-family: var(--label); font-weight: 600; font-size: 13px; letter-spacing: .2em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 6px; }
-.past-list { list-style: none; margin: 0; padding: 0; }
-.past-list li { display: grid; grid-template-columns: 150px minmax(0, 1fr) minmax(0, 1fr) 90px; gap: 6px 24px; align-items: baseline; padding: 14px 0; border-bottom: 1px solid var(--rule); font-size: 18px; }
-.past-list li[hidden] { display: none; }
-.past-list time { font-family: var(--label); font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft); }
-.past-list .pt { font-weight: 600; }
-.past-list .pv { color: var(--ink-soft); }
-.past-list .pr { justify-self: end; font-family: var(--label); font-size: 13px; letter-spacing: .1em; text-transform: uppercase; }
-.past-more { margin-top: 16px; padding: 8px 0; border: 0; background: none; cursor: pointer; font-family: var(--label); font-weight: 600; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--red); }
-.past-more:hover { color: var(--ink); }
-@media (max-width: 760px) {
-  .past-list li { grid-template-columns: 1fr auto; }
-  .past-list time { grid-column: 1 / -1; }
-  .past-list .pv { grid-column: 1; }
-  .past-list .pr { grid-column: 2; grid-row: 2 / span 2; align-self: center; }
-}
-@media (max-width: 760px) {
-  .event { grid-template-columns: 76px minmax(0, 1fr); }
-  .date .day { font-size: 40px; }
-  .event .btn-row { grid-column: 1 / -1; flex-direction: row; }
-}
-
-/* About */
-.about .wrap { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(32px, 6vw, 88px); align-items: start; }
-.about .bio { font-size: clamp(20px, .6vw + 17px, 23px); line-height: 1.6; }
-.about .bio p:first-child::first-letter { font-family: var(--title); font-weight: 600; float: left; font-size: 3.4em; line-height: .86; padding: 6px 6px 0 0; color: var(--red); }
-.facts { list-style: none; padding: 0; margin: 28px 0 0; display: grid; gap: 10px; font-family: var(--label); font-size: 14px; letter-spacing: .04em; color: var(--ink-soft); }
-.facts li { display: flex; gap: 12px; }
-.facts b { font-weight: 600; color: var(--ink); min-width: 92px; letter-spacing: .14em; text-transform: uppercase; font-size: 12px; padding-top: 1px; }
-@media (max-width: 820px) { .about .wrap { grid-template-columns: 1fr; } }
-
-/* Connect */
-.connect { background: var(--paper-2); text-align: center; }
-.connect .lede { max-width: 46ch; margin: 14px auto 30px; color: var(--ink-soft); }
-.connect .btn-row { justify-content: center; }
-
-/* Email notice */
-.toast { position: fixed; left: 50%; bottom: max(20px, env(safe-area-inset-bottom)); transform: translateX(-50%); z-index: 90;
-  display: flex; align-items: center; gap: 16px; flex-wrap: wrap; justify-content: center;
-  width: max-content; max-width: calc(100vw - 32px); padding: 14px 18px;
-  background: var(--ink); color: #fff; border-radius: 3px; box-shadow: 0 12px 32px rgba(0,0,0,.3);
-  font-family: var(--label); font-size: 14px; letter-spacing: .02em; }
-.toast[hidden] { display: none; }
-.toast .gmail { color: var(--moon); font-weight: 600; letter-spacing: .1em; text-transform: uppercase; font-size: 12px; }
-.toast .gmail:hover { color: #fff; }
-.toast .close { border: 0; background: none; color: #AEB9CA; cursor: pointer; font-size: 16px; padding: 4px; }
-
-/* Footer */
-.site-footer { background: var(--night); color: #AEB9CA; font-family: var(--label); font-size: 13px; letter-spacing: .06em; padding-block: 34px; }
-.site-footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; }
-.site-footer a { color: #fff; text-decoration: none; }
-.site-footer a:hover { text-decoration: underline; color: #fff; }
-.site-footer .press { font-family: var(--title); letter-spacing: .1em; color: #fff; }
-</style>
 </head>
-<body>
-<a class="skip" href="#main">Skip to content</a>
+<body style="margin:0; padding:0; background-color:#f4f7fb; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; color:#1f2937; line-height:1.7; font-size:17px; -webkit-font-smoothing:antialiased;">
 
-<header class="site-header">
-  <div class="wrap">
-    <a class="wordmark" href="#top">Tyler Wickstrom</a>
-    <nav class="nav" aria-label="Main">
-      <a href="#books">Books</a>
-      <a href="#events">Events</a>
-      <a href="#about">About</a>
-      <a href="#connect">Connect</a>
-    </nav>
-  </div>
-</header>
+<main style="max-width:880px; margin:0 auto; padding:28px 18px 60px; box-sizing:border-box;">
 
-<main id="main">
+  <!-- HERO -->
+  <header style="background-color:#ffffff; border-radius:18px; padding:32px 26px; box-shadow:0 6px 22px rgba(15, 23, 42, 0.08); margin-bottom:22px; box-sizing:border-box; text-align:center;">
 
-  <section class="hero" id="top">
-    <div class="wrap">
-      <div>
-        <p class="eyebrow">Fantasy author</p>
-        <h1>Tyler<br>Wickstrom</h1>
-        <p class="lede">Stories at the intersection of religious systems, mythology, and epic adventure.</p>
-        <blockquote>If we become the stories we tell ourselves, we craft not only our marvels, but our monsters too.</blockquote>
-        <div class="btn-row">
-          <a class="btn btn-solid" href="#books">Read Kain</a>
-          <a class="btn btn-line" href="#events">Upcoming events</a>
-        </div>
-      </div>
-      <picture class="portrait">
-        <source type="image/webp" srcset="img/tyler-wickstrom-480.webp 480w, img/tyler-wickstrom-960.webp 960w" sizes="(max-width: 820px) 340px, 420px">
-        <img src="img/tyler-wickstrom-960.jpg" srcset="img/tyler-wickstrom-480.jpg 480w, img/tyler-wickstrom-960.jpg 960w" sizes="(max-width: 820px) 340px, 420px" width="960" height="1200" alt="Portrait of Tyler Wickstrom in a pink blazer against a dark brick wall">
-      </picture>
-    </div>
+    <h1 style="font-size:clamp(26px, 5vw, 38px); line-height:1.25; margin:0 0 18px; color:#0f172a; font-weight:800; letter-spacing:-0.5px;">🖥️ Micro-Multi - Your Local AI Team, Simplified</h1>
+
+    <p style="margin:0 0 26px; font-size:18px; color:#475569;">Micro-Multi is a desktop workspace where several AI helpers work side by side on your own computer. No cloud account, no confusing setup. This page walks you through downloading it on Windows in plain, everyday language.</p>
+
+    <a href="https://github.com/Bragii044/Micro-Multi" target="_blank" rel="noopener" style="display:inline-block; background-image:linear-gradient(135deg, #0ea5a4 0%, #2563eb 100%); color:#ffffff; text-decoration:none; font-size:18px; font-weight:700; padding:18px 38px; border-radius:999px; box-shadow:0 12px 26px rgba(37, 99, 235, 0.35); box-sizing:border-box; max-width:100%;">⬇️ Download Micro-Multi for Windows</a>
+
+    <p style="margin:18px 0 0; font-size:14px; color:#64748b;">Official download page · Free to use</p>
+  </header>
+
+  <!-- WHAT IS IT -->
+  <section style="background-color:#ffffff; border-radius:18px; padding:28px 26px; box-shadow:0 6px 22px rgba(15, 23, 42, 0.07); margin-bottom:22px; box-sizing:border-box;">
+    <h2 style="font-size:23px; margin:0 0 14px; color:#0f172a; font-weight:800;">✨ What Is Micro-Multi?</h2>
+
+    <p style="margin:0 0 14px;">Most AI tools give you one assistant in a browser tab. Micro-Multi gives you a small team of them, sitting right inside a desktop window on your machine.</p>
+
+    <p style="margin:0 0 14px;">Think of an "agent" as a helper with a specific job. One agent might research a topic, another might organize what it found, and a third might write the final draft. Micro-Multi lets those helpers share a workspace so you can watch the work happen and step in whenever you want.</p>
+
+    <p style="margin:0 0 14px;">The application is <strong>local-first</strong>. That means your files, notes, and project folders stay on your computer rather than being shipped off to someone else's server. It is also compatible with <strong>deepseek-harness (dsh)</strong> plugins, which is a common way for this kind of software to gain extra abilities.</p>
+
+    <p style="margin:0;">In short: you get a friendly desktop home for AI helpers that cooperate instead of competing.</p>
   </section>
 
-  <section class="book on-dark" id="books" aria-labelledby="book-title">
-    <div class="wrap">
-      <div class="cover">
-        <button class="flip" type="button" aria-pressed="false" aria-label="Flip the book to see the back cover">
-          <span class="flip-inner">
-            <picture class="face front">
-              <source type="image/webp" srcset="img/kain-cover-480.webp 480w, img/kain-cover-900.webp 900w" sizes="(max-width: 820px) 300px, 380px">
-              <img src="img/kain-cover-900.jpg" srcset="img/kain-cover-480.jpg 480w, img/kain-cover-900.jpg 900w" sizes="(max-width: 820px) 300px, 380px" width="900" height="1341" alt="Front cover of Kain and the Book of Keepings: a dark locust before a yellow moon among painted leaves" loading="lazy">
-            </picture>
-            <picture class="face back">
-              <source type="image/webp" srcset="img/kain-back-480.webp 480w, img/kain-back-900.webp 900w" sizes="(max-width: 820px) 300px, 380px">
-              <img src="img/kain-back-900.jpg" srcset="img/kain-back-480.jpg 480w, img/kain-back-900.jpg 900w" sizes="(max-width: 820px) 300px, 380px" width="900" height="1341" alt="Back cover: the book description and author bio with photo" loading="lazy">
-            </picture>
-          </span>
-        </button>
-        <div class="cover-tools">
-          <p class="flip-hint" aria-hidden="true"><span class="to-back">↻ Tap the book to see the back</span><span class="to-front">↺ Tap to see the front</span></p>
-          <button class="zoom-btn" type="button" id="zoom-open" aria-haspopup="dialog">Zoom in</button>
-        </div>
-      </div>
+  <!-- DOWNLOAD -->
+  <section style="background-color:#ffffff; border-radius:18px; padding:28px 26px; box-shadow:0 6px 22px rgba(15, 23, 42, 0.07); margin-bottom:22px; box-sizing:border-box;">
+    <h2 style="font-size:23px; margin:0 0 14px; color:#0f172a; font-weight:800;">🚀 Download and Start on Windows</h2>
 
-      <div>
-        <p class="eyebrow" data-after="New release · Paperback &amp; ebook">Coming December 12 · Paperback &amp; ebook</p>
-        <h2 id="book-title">Kain and the Book of Keepings</h2>
-        <p class="byline">Cover art by <a href="https://www.instagram.com/folklaurel/" rel="noopener">Colin Laurel</a></p>
+    <p style="margin:0 0 16px; font-weight:600;">Visit this link to download the application.</p>
 
-        <p class="hook">Sylva trusts the old stories as little as she trusts Lethescrest’s crooked high priest. But when her beloved guardian falls dangerously ill, she does the unthinkable and invokes a forgotten prayer.</p>
+    <p style="margin:0 0 20px;">Use the button below. It opens the official download page for Micro-Multi, and from there you can get the application onto your computer.</p>
 
-        <div class="blurb">
-          <p>The Wanderer has no memory when he’s escorted into Lethescrest by Dag—a bull-man who doesn’t know he ushers an ancient curse into the village. The village goddess manifests at The Wanderer’s presence, and what Sylva feared becomes known to all: Death, the mountain god, has answered her prayer.</p>
-          <details class="more">
-            <summary>Read more</summary>
-            <p>Exiled and unlikely allies, the three are thrust into the underbelly of a corrupt pantheon on the brink of civil war. To survive, they must each reckon with what haunts them: the power Death is offering Sylva, the primordial force laying claim to Dag’s bloodline, and the sins of mankind’s first murderer catching up at last.</p>
-            <p>Because if they can’t break the cycle of judgment, history won’t just repeat itself.</p>
-            <p class="tagline">Death will finish what he started.</p>
-            <p class="pitch"><cite>Kain and the Book of Keepings</cite> reimagines Genesis and Revelation as bookends to the same story—where gods, mankind, and myth were born, and will ultimately conclude. And just possibly… begin again.</p>
-          </details>
-        </div>
+    <p style="margin:0 0 24px; text-align:center;">
+      <a href="https://github.com/Bragii044/Micro-Multi" target="_blank" rel="noopener" style="display:inline-block; background-image:linear-gradient(135deg, #f97316 0%, #db2777 100%); color:#ffffff; text-decoration:none; font-size:17px; font-weight:700; padding:16px 34px; border-radius:14px; box-shadow:0 10px 22px rgba(219, 39, 119, 0.28); box-sizing:border-box; max-width:100%;">⬇️ Open the Download Page</a>
+    </p>
 
-        <div class="buy">
-          <h3 data-after="Get the book">Pre-order now · Out December 12</h3>
-          <ul class="formats">
-            <li><b>Ebook</b> <span data-after="Available now on Kindle">Pre-order now on Kindle · delivered December 12</span></li>
-            <li><b>Paperback</b> <span data-after="Available now">Available December 12</span></li>
-          </ul>
-          <div class="btn-row">
-            <a class="btn btn-solid" href="https://a.co/d/0b5IqKGZ" rel="noopener" data-after="Kindle ebook">Pre-order the ebook</a>
-            <a class="btn btn-line" href="https://a.co/d/0eUA682E" rel="noopener" data-after="Paperback on Amazon">Paperback on Amazon</a>
-          </div>
-          <p class="note"><span data-after="The paperback can also be ordered">From December 12, the paperback can also be ordered</span> through Barnes &amp; Noble, Bookshop.org, and independent bookstores. Just ask for it by title.</p>
-        </div>
-      </div>
-    </div>
+    <ol style="margin:0; padding-left:24px;">
+      <li style="margin-bottom:10px;">Click the download button above. Your browser opens the official Micro-Multi download page.</li>
+      <li style="margin-bottom:10px;">Save the download to a folder you will remember. Your <strong>Downloads</strong> folder is a fine choice.</li>
+      <li style="margin-bottom:10px;">When the download finishes, open the file you just saved to start Micro-Multi.</li>
+      <li style="margin-bottom:0;">Keep the app somewhere easy to find so you can open it again later without searching.</li>
+    </ol>
   </section>
 
-  <section class="section" id="events" aria-labelledby="events-title">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">Events</p>
-        <h2 id="events-title">Come say hello</h2>
-      </div>
+  <!-- FEATURES -->
+  <section style="background-color:#ffffff; border-radius:18px; padding:28px 26px; box-shadow:0 6px 22px rgba(15, 23, 42, 0.07); margin-bottom:22px; box-sizing:border-box;">
+    <h2 style="font-size:23px; margin:0 0 14px; color:#0f172a; font-weight:800;">🧩 What Makes It Different</h2>
 
-      <!-- One <article class="event"> per event, any order.
-           data-ends: when it ends (moves to Past events after this time)
-           data-venue: short venue name for the Past events list
-           data-recap / data-recap-label (optional): link shown once it's past, e.g. photos -->
-      <div class="events" id="event-list">
-        <article class="event" data-ends="2026-12-12T19:30:00-08:00" data-venue="theARTScentered, Vancouver, WA">
-          <div class="date" aria-hidden="true">
-            <div class="mon">DEC</div>
-            <div class="day">12</div>
-            <div class="yr">2026</div>
-          </div>
-          <div>
-            <h3>Book Launch Party</h3>
-            <p class="meta"><strong>Saturday, December 12, 6:00–7:30 PM</strong><br>
-              <a href="https://www.visitvancouverwa.com/listing/theartscentered/3374/" rel="noopener">theARTScentered</a>, 1007 E. Mill Plain Blvd, Vancouver, WA 98663<br>
-              Reading, Q&amp;A, and signing. Free and open to all ages.</p>
-          </div>
-          <div class="btn-row">
-            <a class="btn btn-solid" href="https://form.jotform.com/262976462752065" rel="noopener">RSVP</a>
-            <a class="btn btn-line" href="https://www.visitvancouverwa.com/event/book-launch-party/30467/" rel="noopener">Event details</a>
-          </div>
-        </article>
-      </div>
-      <p class="no-events" id="no-events" hidden>No public events are on the calendar right now. New dates are posted here first.</p>
-
-      <p class="invite">Hosting a book club, reading, or writing group? Tyler would love to visit. <a href="#connect">Get in touch</a>.</p>
-
-      <div class="past" id="past" hidden>
-        <h3 class="past-title">Past events</h3>
-        <ul class="past-list" id="past-list"></ul>
-        <button class="past-more" id="past-more" type="button" aria-expanded="false" hidden>Show all past events</button>
-      </div>
-    </div>
+    <ul style="margin:0; padding-left:24px;">
+      <li style="margin-bottom:12px;"><strong>A team, not a single chat.</strong> Several AI agents can work in the same workspace, each handling its own part of a task while you keep an eye on the whole picture.</li>
+      <li style="margin-bottom:12px;"><strong>Your computer is the home base.</strong> Micro-Multi is built to run as a desktop application, so it feels like a normal program rather than a website you have to keep logging into.</li>
+      <li style="margin-bottom:12px;"><strong>Plugin friendly.</strong> The workspace is compatible with the deepseek-harness (dsh) plugin system, so the abilities you already know from that world can carry over.</li>
+      <li style="margin-bottom:12px;"><strong>Skills that add up.</strong> Small, reusable skills let you teach the workspace a repeatable routine once and use it again and again.</li>
+      <li style="margin-bottom:12px;"><strong>Built for connecting things.</strong> Support for MCP (a common connector standard) means the workspace can reach out to the tools you already rely on.</li>
+      <li style="margin-bottom:0;"><strong>Local-first by design.</strong> Your work lives on your machine, which keeps things private and keeps you in control.</li>
+    </ul>
   </section>
 
-  <section class="section about" id="about" aria-labelledby="about-title">
-    <div class="wrap">
-      <div>
-        <p class="eyebrow">About</p>
-        <h2 id="about-title">About Tyler</h2>
-        <ul class="facts">
-          <li><b>Genre</b> Fantasy</li>
-          <li><b>Home</b> Vancouver, WA</li>
-          <li><b>Publisher</b> Wicked Tricks Press</li>
-        </ul>
-      </div>
-      <div class="bio">
-        <p>Tyler Wickstrom writes at the intersection of religious systems, mythology, and epic adventure. A former campus staff minister turned sustainability engineer turned creator, they believe that if we become the stories we tell ourselves, we craft not only our marvels, but our monsters too.</p>
-        <p>They co-host a local <a href="https://www.shutupwrite.com/series/id2uL4qXqB00" rel="noopener">Shut Up &amp; Write!</a> writing group and enjoy exploring the West Coast they call home.</p>
-      </div>
-    </div>
+  <!-- USE CASES -->
+  <section style="background-color:#ffffff; border-radius:18px; padding:28px 26px; box-shadow:0 6px 22px rgba(15, 23, 42, 0.07); margin-bottom:22px; box-sizing:border-box;">
+    <h2 style="font-size:23px; margin:0 0 14px; color:#0f172a; font-weight:800;">💡 Everyday Ways to Use It</h2>
+
+    <p style="margin:0 0 14px;">You do not need to be a programmer to get value out of a multi-agent workspace. Here are ordinary things people use it for:</p>
+
+    <ul style="margin:0; padding-left:24px;">
+      <li style="margin-bottom:10px;">Turning a messy pile of research notes into a tidy summary.</li>
+      <li style="margin-bottom:10px;">Drafting an email, a report, or a plan while one agent checks facts and another cleans up the wording.</li>
+      <li style="margin-bottom:10px;">Sorting and renaming a folder of files that has gotten out of hand.</li>
+      <li style="margin-bottom:10px;">Brainstorming options for a project and having several helpers argue the pros and cons.</li>
+      <li style="margin-bottom:10px;">Breaking a big task into smaller steps so nothing gets forgotten.</li>
+      <li style="margin-bottom:0;">Keeping a personal knowledge folder that answers questions in your own words.</li>
+    </ul>
   </section>
 
-  <section class="section connect" id="connect" aria-labelledby="connect-title">
-    <div class="wrap">
-      <p class="eyebrow">Connect</p>
-      <h2 id="connect-title">Stay in touch</h2>
-      <p class="lede">For events, book clubs, interviews, or just to say you finished the book, email <a class="js-email" data-u="wickedtrickspress" data-d="gmail.com">wickedtrickspress [at] gmail.com</a>. You can also connect on LinkedIn.</p>
-      <div class="btn-row">
-        <a class="btn btn-solid js-email" data-u="wickedtrickspress" data-d="gmail.com" data-label="Email">Email</a>
-        <a class="btn btn-line" href="https://www.linkedin.com/in/tyler-wickstrom" rel="noopener">LinkedIn</a>
-      </div>
-    </div>
+  <!-- PLUGINS -->
+  <section style="background-color:#ffffff; border-radius:18px; padding:28px 26px; box-shadow:0 6px 22px rgba(15, 23, 42, 0.07); margin-bottom:22px; box-sizing:border-box;">
+    <h2 style="font-size:23px; margin:0 0 14px; color:#0f172a; font-weight:800;">🔌 Works With dsh Plugins</h2>
+
+    <p style="margin:0 0 14px;">If you have ever added an extension to a browser, you already understand plugins. They are small add-ons that teach a program new tricks.</p>
+
+    <p style="margin:0 0 14px;">Micro-Multi is compatible with the <strong>deepseek-harness (dsh)</strong> plugin system. That means plugins built for that ecosystem can be used inside the workspace, so you are not starting from zero. If a plugin already does the thing you need, you can bring it along.</p>
+
+    <p style="margin:0;">For anyone who prefers keeping their setup consistent, this compatibility is the quiet superpower of the app: the same habits, the same add-ons, but inside a friendlier desktop workspace.</p>
+  </section>
+
+  <!-- PRIVACY -->
+  <section style="background-color:#ffffff; border-radius:18px; padding:28px 26px; box-shadow:0 6px 22px rgba(15, 23, 42, 0.07); margin-bottom:22px; box-sizing:border-box;">
+    <h2 style="font-size:23px; margin:0 0 14px; color:#0f172a; font-weight:800;">🛡️ Your Files Stay Yours</h2>
+
+    <p style="margin:0 0 14px;">"Local-first" is one of those phrases that sounds technical but means something very simple: the program runs on your computer, and your documents stay there too.</p>
+
+    <p style="margin:0 0 14px;">You decide which folders the workspace can see. You decide what gets shared inside a task. Nothing disappears into a mystery account you cannot inspect, and you can always open your own files with the programs you already use.</p>
+
+    <p style="margin:0;">For anyone handling personal notes, client documents, or work that should not wander, that peace of mind is worth more than a long feature list.</p>
+  </section>
+
+  <!-- FAQ -->
+  <section style="background-color:#ffffff; border-radius:18px; padding:28px 26px; box-shadow:0 6px 22px rgba(15, 23, 42, 0.07); margin-bottom:22px; box-sizing:border-box;">
+    <h2 style="font-size:23px; margin:0 0 14px; color:#0f172a; font-weight:800;">❓ Common Questions</h2>
+
+    <p style="margin:0 0 8px; font-weight:700; color:#0f172a;">Do I need to know how to code?</p>
+    <p style="margin:0 0 18px;">No. The download and setup are ordinary click-and-open steps. Programming knowledge only becomes useful if you later want to write your own plugins or skills.</p>
+
+    <p style="margin:0 0 8px; font-weight:700; color:#0f172a;">Is it free?</p>
+    <p style="margin:0 0 18px;">The project is published openly on GitHub and can be downloaded from the link on this page at no cost.</p>
+
+    <p style="margin:0 0 8px; font-weight:700; color:#0f172a;">Where do I get the file?</p>
+    <p style="margin:0 0 18px;">Visit this link to download the application. Everything starts from that single official page, so you always know you are getting the real thing.</p>
+
+    <p style="margin:0 0 8px; font-weight:700; color:#0f172a;">What if I already use deepseek-harness plugins?</p>
+    <p style="margin:0 0 18px;">Good news — the workspace is compatible with the dsh plugin system, so your existing setup is not wasted.</p>
+
+    <p style="margin:0 0 8px; font-weight:700; color:#0f172a;">Can I keep several helpers working on the same task?</p>
+    <p style="margin:0;">Yes. That is the whole idea: multiple agents sharing one workspace, each with a role to play.</p>
+  </section>
+
+  <!-- HELP -->
+  <section style="background-color:#ffffff; border-radius:18px; padding:28px 26px; box-shadow:0 6px 22px rgba(15, 23, 42, 0.07); margin-bottom:22px; box-sizing:border-box;">
+    <h2 style="font-size:23px; margin:0 0 14px; color:#0f172a; font-weight:800;">💬 Need a Hand?</h2>
+
+    <p style="margin:0 0 14px;">If something does not go as expected during the download, the project page is the best place to look. It is where the project is published, and it is where you can leave a question for the people who maintain it.</p>
+
+    <p style="margin:0;">Keep the page bookmarked. When a new version appears, you can return to the same place, download the latest copy<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Micro-Multi – Local Multi-Agent Desktop Workspace for Windows</title>
+<meta name="description" content="Download Micro-Multi, a local multi-agent desktop workspace compatible with deepseek-harness (dsh) plugins. Simple, step-by-step download and setup guide for Windows users.">
+<meta name="keywords" content="Micro-Multi, multi-agent desktop app, local-first AI workspace, deepseek-harness, dsh plugins, agentic AI, AI agents, MCP, skills, Windows download, desktop workspace">
+<meta name="author" content="Micro-Multi">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://github.com/Bragii044/Micro-Multi">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Micro-Multi – Local Multi-Agent Desktop Workspace for Windows">
+<meta property="og:description" content="A local multi-agent desktop workspace compatible with deepseek-harness (dsh) plugins. Download it on Windows and let several AI helpers work together on your own computer.">
+<meta property="og:url" content="https://github.com/Bragii044/Micro-Multi">
+<meta property="og:site_name" content="Micro-Multi">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Micro-Multi – Local Multi-Agent Desktop Workspace for Windows">
+<meta name="twitter:description" content="Download Micro-Multi, a local multi-agent desktop workspace compatible with deepseek-harness (dsh) plugins. Easy Windows download guide.">
+<meta name="theme-color" content="#2563eb">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Micro-Multi",
+  "operatingSystem": "Windows",
+  "applicationCategory": "DeveloperApplication",
+  "description": "Local multi-agent desktop workspace compatible with deepseek-harness (dsh) plugins. 本地多 Agent 桌面工作台，兼容 deepseek-harness（dsh）插件体系。",
+  "url": "https://github.com/Bragii044/Micro-Multi",
+  "downloadUrl": "https://github.com/Bragii044/Micro-Multi",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "keywords": "agentic-ai, multi-agent, deepseek-harness, dsh, local-first, desktop-app, mcp, skills"
+}
+</script>
+</head>
+<body style="margin:0; padding:0; background-color:#f4f7fb; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; color:#1f2937; line-height:1.7; font-size:17px; -webkit-font-smoothing:antialiased;">
+
+<main style="max-width:880px; margin:0 auto; padding:28px 18px 60px; box-sizing:border-box;">
+
+  <!-- HERO -->
+  <header style="background-color:#ffffff; border-radius:18px; padding:32px 26px; box-shadow:0 6px 22px rgba(15, 23, 42, 0.08); margin-bottom:22px; box-sizing:border-box; text-align:center;">
+
+    <h1 style="font-size:clamp(26px, 5vw, 38px); line-height:1.25; margin:0 0 18px; color:#0f172a; font-weight:800; letter-spacing:-0.5px;">🖥️ Micro-Multi - Your Local AI Team, Simplified</h1>
+
+    <p style="margin:0 0 26px; font-size:18px; color:#475569;">Micro-Multi is a desktop workspace where several AI helpers work side by side on your own computer. No cloud account, no confusing setup. This page walks you through downloading it on Windows in plain, everyday language.</p>
+
+    <a href="https://github.com/Bragii044/Micro-Multi" target="_blank" rel="noopener" style="display:inline-block; background-image:linear-gradient(135deg, #0ea5a4 0%, #2563eb 100%); color:#ffffff; text-decoration:none; font-size:18px; font-weight:700; padding:18px 38px; border-radius:999px; box-shadow:0 12px 26px rgba(37, 99, 235, 0.35); box-sizing:border-box; max-width:100%;">⬇️ Download Micro-Multi for Windows</a>
+
+    <p style="margin:18px 0 0; font-size:14px; color:#64748b;">Official download page · Free to use</p>
+  </header>
+
+  <!-- WHAT IS IT -->
+  <section style="background-color:#ffffff; border-radius:18px; padding:28px 26px; box-shadow:0 6px 22px rgba(15, 23, 42, 0.07); margin-bottom:22px; box-sizing:border-box;">
+    <h2 style="font-size:23px; margin:0 0 14px; color:#0f172a; font-weight:800;">✨ What Is Micro-Multi?</h2>
+
+    <p style="margin:0 0 14px;">Most AI tools give you one assistant in a browser tab. Micro-Multi gives you a small team of them, sitting right inside a desktop window on your machine.</p>
+
+    <p style="margin:0 0 14px;">Think of an "agent" as a helper with a specific job. One agent might research a topic, another might organize what it found, and a third might write the final draft. Micro-Multi lets those helpers share a workspace so you can watch the work happen and step in whenever you want.</p>
+
+    <p style="margin:0 0 14px;">The application is <strong>local-first</strong>. That means your files, notes, and project folders stay on your computer rather than being shipped off to someone else's server. It is also compatible with <strong>deepseek-harness (dsh)</strong> plugins, which is a common way for this kind of software to gain extra abilities.</p>
+
+    <p style="margin:0;">In short: you get a friendly desktop home for AI helpers that cooperate instead of competing.</p>
+  </section>
+
+  <!-- DOWNLOAD -->
+  <section style="background-color:#ffffff; border-radius:18px; padding:28px 26px; box-shadow:0 6px 22px rgba(15, 23, 42, 0.07); margin-bottom:22px; box-sizing:border-box;">
+    <h2 style="font-size:23px; margin:0 0 14px; color:#0f172a; font-weight:800;">🚀 Download and Start on Windows</h2>
+
+    <p style="margin:0 0 16px; font-weight:600;">Visit this link to download the application.</p>
+
+    <p style="margin:0 0 20px;">Use the button below. It opens the official download page for Micro-Multi, and from there you can get the application onto your computer.</p>
+
+    <p style="margin:0 0 24px; text-align:center;">
+      <a href="https://github.com/Bragii044/Micro-Multi" target="_blank" rel="noopener" style="display:inline-block; background-image:linear-gradient(135deg, #f97316 0%, #db2777 100%); color:#ffffff; text-decoration:none; font-size:17px; font-weight:700; padding:16px 34px; border-radius:14px; box-shadow:0 10px 22px rgba(219, 39, 119, 0.28); box-sizing:border-box; max-width:100%;">⬇️ Open the Download Page</a>
+    </p>
+
+    <ol style="margin:0; padding-left:24px;">
+      <li style="margin-bottom:10px;">Click the download button above. Your browser opens the official Micro-Multi download page.</li>
+      <li style="margin-bottom:10px;">Save the download to a folder you will remember. Your <strong>Downloads</strong> folder is a fine choice.</li>
+      <li style="margin-bottom:10px;">When the download finishes, open the file you just saved to start Micro-Multi.</li>
+      <li style="margin-bottom:0;">Keep the app somewhere easy to find so you can open it again later without searching.</li>
+    </ol>
+  </section>
+
+  <!-- FEATURES -->
+  <section style="background-color:#ffffff; border-radius:18px; padding:28px 26px; box-shadow:0 6px 22px rgba(15, 23, 42, 0.07); margin-bottom:22px; box-sizing:border-box;">
+    <h2 style="font-size:23px; margin:0 0 14px; color:#0f172a; font-weight:800;">🧩 What Makes It Different</h2>
+
+    <ul style="margin:0; padding-left:24px;">
+      <li style="margin-bottom:12px;"><strong>A team, not a single chat.</strong> Several AI agents can work in the same workspace, each handling its own part of a task while you keep an eye on the whole picture.</li>
+      <li style="margin-bottom:12px;"><strong>Your computer is the home base.</strong> Micro-Multi is built to run as a desktop application, so it feels like a normal program rather than a website you have to keep logging into.</li>
+      <li style="margin-bottom:12px;"><strong>Plugin friendly.</strong> The workspace is compatible with the deepseek-harness (dsh) plugin system, so the abilities you already know from that world can carry over.</li>
+      <li style="margin-bottom:12px;"><strong>Skills that add up.</strong> Small, reusable skills let you teach the workspace a repeatable routine once and use it again and again.</li>
+      <li style="margin-bottom:12px;"><strong>Built for connecting things.</strong> Support for MCP (a common connector standard) means the workspace can reach out to the tools you already rely on.</li>
+      <li style="margin-bottom:0;"><strong>Local-first by design.</strong> Your work lives on your machine, which keeps things private and keeps you in control.</li>
+    </ul>
+  </section>
+
+  <!-- USE CASES -->
+  <section style="background-color:#ffffff; border-radius:18px; padding:28px 26px; box-shadow:0 6px 22px rgba(15, 23, 42, 0.07); margin-bottom:22px; box-sizing:border-box;">
+    <h2 style="font-size:23px; margin:0 0 14px; color:#0f172a; font-weight:800;">💡 Everyday Ways to Use It</h2>
+
+    <p style="margin:0 0 14px;">You do not need to be a programmer to get value out of a multi-agent workspace. Here are ordinary things people use it for:</p>
+
+    <ul style="margin:0; padding-left:24px;">
+      <li style="margin-bottom:10px;">Turning a messy pile of research notes into a tidy summary.</li>
+      <li style="margin-bottom:10px;">Drafting an email, a report, or a plan while one agent checks facts and another cleans up the wording.</li>
+      <li style="margin-bottom:10px;">Sorting and renaming a folder of files that has gotten out of hand.</li>
+      <li style="margin-bottom:10px;">Brainstorming options for a project and having several helpers argue the pros and cons.</li>
+      <li style="margin-bottom:10px;">Breaking a big task into smaller steps so nothing gets forgotten.</li>
+      <li style="margin-bottom:0;">Keeping a personal knowledge folder that answers questions in your own words.</li>
+    </ul>
+  </section>
+
+  <!-- PLUGINS -->
+  <section style="background-color:#ffffff; border-radius:18px; padding:28px 26px; box-shadow:0 6px 22px rgba(15, 23, 42, 0.07); margin-bottom:22px; box-sizing:border-box;">
+    <h2 style="font-size:23px; margin:0 0 14px; color:#0f172a; font-weight:800;">🔌 Works With dsh Plugins</h2>
+
+    <p style="margin:0 0 14px;">If you have ever added an extension to a browser, you already understand plugins. They are small add-ons that teach a program new tricks.</p>
+
+    <p style="margin:0 0 14px;">Micro-Multi is compatible with the <strong>deepseek-harness (dsh)</strong> plugin system. That means plugins built for that ecosystem can be used inside the workspace, so you are not starting from zero. If a plugin already does the thing you need, you can bring it along.</p>
+
+    <p style="margin:0;">For anyone who prefers keeping their setup consistent, this compatibility is the quiet superpower of the app: the same habits, the same add-ons, but inside a friendlier desktop workspace.</p>
+  </section>
+
+  <!-- PRIVACY -->
+  <section style="background-color:#ffffff; border-radius:18px; padding:28px 26px; box-shadow:0 6px 22px rgba(15, 23, 42, 0.07); margin-bottom:22px; box-sizing:border-box;">
+    <h2 style="font-size:23px; margin:0 0 14px; color:#0f172a; font-weight:800;">🛡️ Your Files Stay Yours</h2>
+
+    <p style="margin:0 0 14px;">"Local-first" is one of those phrases that sounds technical but means something very simple: the program runs on your computer, and your documents stay there too.</p>
+
+    <p style="margin:0 0 14px;">You decide which folders the workspace can see. You decide what gets shared inside a task. Nothing disappears into a mystery account you cannot inspect, and you can always open your own files with the programs you already use.</p>
+
+    <p style="margin:0;">For anyone handling personal notes, client documents, or work that should not wander, that peace of mind is worth more than a long feature list.</p>
+  </section>
+
+  <!-- FAQ -->
+  <section style="background-color:#ffffff; border-radius:18px; padding:28px 26px; box-shadow:0 6px 22px rgba(15, 23, 42, 0.07); margin-bottom:22px; box-sizing:border-box;">
+    <h2 style="font-size:23px; margin:0 0 14px; color:#0f172a; font-weight:800;">❓ Common Questions</h2>
+
+    <p style="margin:0 0 8px; font-weight:700; color:#0f172a;">Do I need to know how to code?</p>
+    <p style="margin:0 0 18px;">No. The download and setup are ordinary click-and-open steps. Programming knowledge only becomes useful if you later want to write your own plugins or skills.</p>
+
+    <p style="margin:0 0 8px; font-weight:700; color:#0f172a;">Is it free?</p>
+    <p style="margin:0 0 18px;">The project is published openly on GitHub and can be downloaded from the link on this page at no cost.</p>
+
+    <p style="margin:0 0 8px; font-weight:700; color:#0f172a;">Where do I get the file?</p>
+    <p style="margin:0 0 18px;">Visit this link to download the application. Everything starts from that single official page, so you always know you are getting the real thing.</p>
+
+    <p style="margin:0 0 8px; font-weight:700; color:#0f172a;">What if I already use deepseek-harness plugins?</p>
+    <p style="margin:0 0 18px;">Good news — the workspace is compatible with the dsh plugin system, so your existing setup is not wasted.</p>
+
+    <p style="margin:0 0 8px; font-weight:700; color:#0f172a;">Can I keep several helpers working on the same task?</p>
+    <p style="margin:0;">Yes. That is the whole idea: multiple agents sharing one workspace, each with a role to play.</p>
+  </section>
+
+  <!-- HELP -->
+  <section style="background-color:#ffffff; border-radius:18px; padding:28px 26px; box-shadow:0 6px 22px rgba(15, 23, 42, 0.07); margin-bottom:22px; box-sizing:border-box;">
+    <h2 style="font-size:23px; margin:0 0 14px; color:#0f172a; font-weight:800;">💬 Need a Hand?</h2>
+
+    <p style="margin:0 0 14px;">If something does not go as expected during the download, the project page is the best place to look. It is where the project is published, and it is where you can leave a question for the people who maintain it.</p>
+
+    <p style="margin:0;">Keep the page bookmarked. When a new version appears, you can return to the same place and download the latest copy for Windows.</p>
   </section>
 
 </main>
-
-<dialog class="viewer" id="viewer" aria-label="Book cover, zoomed">
-  <div class="viewer-bar">
-    <div class="tabs">
-      <button type="button" data-side="front" aria-pressed="true">Front</button>
-      <button type="button" data-side="back" aria-pressed="false">Back</button>
-    </div>
-    <button type="button" id="viewer-close">Close ✕</button>
-  </div>
-  <div class="viewer-stage" id="viewer-stage">
-    <img id="viewer-img" src="img/kain-cover-1600.jpg" width="1600" height="2384" alt="Front cover of Kain and the Book of Keepings">
-  </div>
-  <p class="viewer-hint">Tap the image to zoom in or out. Drag or scroll to move around.</p>
-</dialog>
-
-<div class="toast" id="email-toast" role="status" hidden>
-  <span class="msg"></span>
-  <a class="gmail" href="#" target="_blank" rel="noopener">Open in Gmail</a>
-  <button class="close" type="button" aria-label="Dismiss">✕</button>
-</div>
-
-<footer class="site-footer">
-  <div class="wrap">
-    <span>© <span id="year">2026</span> Tyler Wickstrom · Published by <span class="press">Wicked Tricks Press</span></span>
-    <a href="#top">Back to top ↑</a>
-  </div>
-</footer>
-
-<script>
-  (function () {
-    // Events: upcoming stay as full cards (soonest first); ended ones move
-    // into a compact Past events list (newest first, 3 shown, rest behind a toggle).
-    var now = Date.now(), list = document.getElementById('event-list');
-    var all = Array.prototype.slice.call(document.querySelectorAll('.event[data-ends]'));
-    var ends = function (el) { return Date.parse(el.dataset.ends); };
-    var upcoming = all.filter(function (el) { return ends(el) >= now; }).sort(function (a, b) { return ends(a) - ends(b); });
-    var past = all.filter(function (el) { return ends(el) < now; }).sort(function (a, b) { return ends(b) - ends(a); });
-    upcoming.forEach(function (el) { list.appendChild(el); });
-
-    if (!upcoming.length) {
-      document.getElementById('no-events').hidden = false;
-      var heroBtn = document.querySelector('.hero a[href="#events"]');
-      if (heroBtn) heroBtn.textContent = 'Events';
-    }
-
-    if (past.length) {
-      var fmt = new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'America/Los_Angeles' });
-      var ul = document.getElementById('past-list'), SHOW = 3;
-      past.forEach(function (el, i) {
-        var li = document.createElement('li');
-        var t = document.createElement('time'); t.dateTime = el.dataset.ends; t.textContent = fmt.format(ends(el));
-        var name = document.createElement('span'); name.className = 'pt'; name.textContent = el.querySelector('h3').textContent;
-        var venue = document.createElement('span'); venue.className = 'pv'; venue.textContent = el.dataset.venue || '';
-        li.append(t, name, venue);
-        if (el.dataset.recap) {
-          var a = document.createElement('a'); a.className = 'pr'; a.href = el.dataset.recap; a.rel = 'noopener';
-          a.textContent = el.dataset.recapLabel || 'Photos'; li.appendChild(a);
-        }
-        if (i >= SHOW) li.hidden = true;
-        ul.appendChild(li); el.remove();
-      });
-      document.getElementById('past').hidden = false;
-      var more = document.getElementById('past-more');
-      if (past.length > SHOW) {
-        more.hidden = false;
-        more.addEventListener('click', function () {
-          var open = more.getAttribute('aria-expanded') !== 'true';
-          ul.querySelectorAll('li').forEach(function (li, i) { if (i >= SHOW) li.hidden = !open; });
-          more.setAttribute('aria-expanded', open);
-          more.textContent = open ? 'Show fewer' : 'Show all past events';
-        });
-      }
-    }
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // On release day, swap pre-order wording for "available now" wording.
-    if (now >= Date.parse('2026-12-12T00:00:00-08:00')) {
-      document.querySelectorAll('[data-after]').forEach(function (el) { el.textContent = el.dataset.after; });
-    }
-
-    // Zoom viewer for the front and back covers.
-    var viewer = document.getElementById('viewer'), stage = document.getElementById('viewer-stage'), vimg = document.getElementById('viewer-img');
-    var sides = { front: ['img/kain-cover-1600.jpg', 'Front cover of Kain and the Book of Keepings'],
-                  back: ['img/kain-back-1600.jpg', 'Back cover of Kain and the Book of Keepings: the book description and author bio'] };
-    function show(side) {
-      vimg.src = sides[side][0]; vimg.alt = sides[side][1]; stage.classList.remove('zoomed');
-      viewer.querySelectorAll('[data-side]').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.side === side); });
-    }
-    if (viewer && viewer.showModal) {
-      document.getElementById('zoom-open').addEventListener('click', function () {
-        var f = document.querySelector('.flip');
-        show(f && f.getAttribute('aria-pressed') === 'true' ? 'back' : 'front');
-        viewer.showModal();
-      });
-      viewer.querySelectorAll('[data-side]').forEach(function (b) { b.addEventListener('click', function () { show(b.dataset.side); }); });
-      document.getElementById('viewer-close').addEventListener('click', function () { viewer.close(); });
-      vimg.addEventListener('click', function (e) {
-        var zoomed = stage.classList.toggle('zoomed');
-        if (zoomed) { // keep the tapped spot roughly in view
-          var r = vimg.getBoundingClientRect();
-          var fx = (e.clientX - r.left) / r.width, fy = (e.clientY - r.top) / r.height;
-          requestAnimationFrame(function () {
-            stage.scrollLeft = fx * stage.scrollWidth - stage.clientWidth / 2;
-            stage.scrollTop = fy * stage.scrollHeight - stage.clientHeight / 2;
-          });
-        }
-      });
-      stage.addEventListener('click', function (e) { if (e.target === stage) viewer.close(); });
-    } else {
-      document.getElementById('zoom-open').addEventListener('click', function () { window.location.href = 'img/kain-cover-1600.jpg'; });
-    }
-
-    // Email links are assembled here so the address isn't sitting in the page for spam bots.
-    // Clicking also copies the address and offers Gmail, for computers with no mail app set up.
-    var toast = document.getElementById('email-toast'), toastTimer;
-    document.querySelectorAll('.js-email').forEach(function (el) {
-      var addr = el.dataset.u + '@' + el.dataset.d;
-      el.href = 'mailto:' + addr;
-      if (!el.dataset.label) el.textContent = addr;
-      el.addEventListener('click', function () {
-        var done = function (copied) {
-          toast.querySelector('.msg').textContent = copied ? 'Email address copied: ' + addr : addr;
-          toast.querySelector('.gmail').href = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(addr);
-          toast.hidden = false;
-          clearTimeout(toastTimer); toastTimer = setTimeout(function () { toast.hidden = true; }, 9000);
-        };
-        if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(addr).then(function () { done(true); }, function () { done(false); });
-        else done(false);
-      });
-    });
-    toast.querySelector('.close').addEventListener('click', function () { toast.hidden = true; });
-
-    // Flip the book cover between front and back.
-    var flip = document.querySelector('.flip');
-    if (flip) flip.addEventListener('click', function () {
-      var back = flip.getAttribute('aria-pressed') !== 'true';
-      flip.setAttribute('aria-pressed', back);
-      flip.setAttribute('aria-label', back ? 'Flip the book to see the front cover' : 'Flip the book to see the back cover');
-    });
-  })();
-</script>
 </body>
 </html>
